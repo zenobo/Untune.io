@@ -1,0 +1,131 @@
+.header-container{
+  background: $header-gradient;
+  padding: 20vh 40px;
+  box-sizing: border-box;
+  display: flex;
+
+  @media screen and (max-width: 1500px){
+    height: 100vh;
+  }
+
+  // Inner container
+  & .header-inner{
+    @include pageMaxWidth;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: wrap;
+    margin: auto;
+  }
+
+  & .header-hamburger{
+    position: fixed;
+    top: 40px;
+    left: 20px;
+    background: none;
+    border: none;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+
+    & img{
+      width: 20px;
+    }
+
+    @media(max-width: $break-desktop-big){
+      left: 10px;
+      position: absolute;
+    }
+
+  }
+
+  // Google chrome icon top right
+  & .header-chrome img{
+    width: 35px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+
+    // mobile
+    @media(max-width: $break-mobile-big){
+      top: 30px;
+    }
+
+  }
+
+  & h1{
+    font-size: 2.5rem;
+    color: #F9F9F9;
+    font-weight: 300;
+    margin: 40px 0;
+    margin-top: 30px;
+    line-height: 1.15;
+
+    @media(max-width: $break-desktop-big){
+      font-size: 1.75rem;
+    }
+  }
+
+  & p{
+    font-size: 1.25rem;
+    color: white;
+    line-height: 1.666;
+
+    & a{
+      @include link;
+      border: 1px solid #FFFFFF;
+      border-radius: 5px;
+      padding: 2px 8px;
+      margin: 0 7px;
+    }
+
+  }
+
+  & .header-playlist-btn{
+    @include dropShadow;
+    width: 225px;
+  }
+
+  // Banner area on top right
+  & .header-banner{
+
+    display: flex;
+    width: 100%;
+
+    & div {
+      flex-basis: 50%;
+
+      // mobile
+      @media(max-width: $break-mobile-big){
+        flex-basis: 100%;
+      }
+
+    }
+
+    // Playlist preview image on the right
+    & .playlist-preview {
+
+      text-align: right;
+
+      & img{
+        width: 400px;
+        max-width: 100%;
+        opacity: 0.2;
+        margin: 5px -40px -40px 0;
+        border-radius: 5px;
+
+        @media(max-width: $break-desktop-big){
+          width: 300px;
+        }
+
+      }
+
+      // mobile
+      @media(max-width: $break-mobile-big){
+        display: none;
+      }
+
+    }
+
+  }
+
+}

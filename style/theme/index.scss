@@ -1,0 +1,45 @@
+// Colors
+$dark-grey-bk: #1D1D1D;
+$white-bk: white;
+$color-blue: #3E55D1;
+
+// Backgrounds
+$header-gradient: linear-gradient(90deg, #3E55D1 0%, #8CF5DC 132.07%);
+
+// Sizes
+$page-max-width: 1100px;
+$sidebar-width: 275px;
+
+// Media
+$break-desktop-big: 1220px;
+$break-mobile-big: 670px;
+$break-tablet-big: 850px;
+
+// Fonts
+$mainFont: 'Sarabun';
+
+@mixin pageMaxWidth{
+  max-width: $page-max-width;
+
+  @media(max-width: $page-max-width){
+    max-width: 100%;
+  }
+}
+
+@mixin link {
+  color: white;
+  text-decoration: none;
+}
+
+@mixin dropShadow {
+  box-shadow: 0 3px 13px rgba(0,0,0,0.25);
+  &:hover{
+    box-shadow: none;
+  }
+}
+
+@mixin ellipsis{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

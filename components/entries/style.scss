@@ -1,0 +1,45 @@
+.entries-container{
+  @include pageMaxWidth;
+  padding: 10px 20px;
+  margin: auto;
+
+  // In todays playlist title
+  & h2{
+    font-size: 18px;
+  }
+
+  // Table displaying all posts
+  & .entries-table{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    min-height: 40vh;
+
+    & .entries-item{
+      @include ellipsis;
+      flex-basis: 48%;
+      max-width: 48%;
+      justify-content: space-between;
+      padding: 10px;
+      box-sizing: border-box;
+      background: #80808014;
+      margin-bottom: 10px;
+
+      & a{
+        @include link;
+        color: black;
+      }
+
+      // Mobile
+      @media(max-width: $break-mobile-big){
+        max-width: 100%;
+        flex-basis: 100%;
+      }
+    }
+  }
+
+}
+
+.credits{
+  text-align: center;
+}

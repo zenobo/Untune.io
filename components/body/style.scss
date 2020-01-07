@@ -1,0 +1,23 @@
+.body-container{
+  background: $white-bk;
+  margin-left: $sidebar-width;
+  width: 100%;
+}
+.body-no-margin{
+  margin: 0;
+
+  & .header-container .header-hamburger{
+    position: absolute;
+
+    @media(max-width: $page-max-width){
+      position: fixed;
+    }
+  }
+
+}
+
+@media(max-width: $page-max-width){
+  .body-container{
+    margin: 0;
+  }
+}
