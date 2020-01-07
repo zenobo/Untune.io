@@ -10,7 +10,7 @@ import { SUBREDDITS, SUBREDDITS_DESKTOP } from 'data/constants';
 import * as uiActions from 'redux/ui/actions/index';
 
 // Components
-import Item from './item'
+import Item from './item';
 
 // Style
 import './style.scss';
@@ -40,7 +40,7 @@ class Sidebar extends React.Component {
           ))}
 
           {desktopOnly.map((val) => (
-            <Item key={val.name} val={val} subreddit={subreddit} desktop={true} />
+            <Item key={val.name} val={val} subreddit={subreddit} desktop />
           ))}
 
         </div>

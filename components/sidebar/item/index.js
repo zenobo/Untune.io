@@ -1,18 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 class Item extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
-
-  isActive = (val, subreddit) => {
-    return val.name === subreddit ? 'sidebar-reddit-active' : '';
-  }
+  isActive = (val, subreddit) => (
+    val.name === subreddit ? 'sidebar-reddit-active' : ''
+  )
 
   render() {
     const { val, subreddit, desktop } = this.props;
@@ -37,8 +30,8 @@ Item.propTypes = {
   }).isRequired,
 };
 
-const mapStateToProps = (state) => ({ });
+const mapStateToProps = () => ({ });
 
-const mapDispatchToProps = (dispatch) => ({ });
+const mapDispatchToProps = () => ({ });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Item);

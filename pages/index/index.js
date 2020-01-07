@@ -30,9 +30,9 @@ class Home extends React.Component {
 
   componentDidMount() {
     const { FetchDesktop, FetchMobile, subreddit } = this.props;
-    if(window.innerWidth>850){
+    if (window.innerWidth > 850) {
       FetchDesktop(subreddit);
-    }else{
+    } else {
       FetchMobile(subreddit);
     }
   }
