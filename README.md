@@ -33,7 +33,7 @@ npm run deploy
 Untune uses the airbnb react linter, which runs on npm run dev.
 
 ## Tests
-Untune uses Jest and React-Testing-Library to test redux connected components. Tests can be found inside the components folder, eg body.test.js. Redux data is imported from __mocks__ and mocked using a static state. Whenever the app's state is changed, it will also need to seperately be updated here.
+Untune uses Jest and React-Testing-Library to test redux connected components. Tests can be found inside the components folder, eg body.test.js. Redux data is imported from __mocks__ as a static state. Whenever the app's state is changed, it will also need to seperately be updated here.
 
 #### Run the test watcher  
 ```
