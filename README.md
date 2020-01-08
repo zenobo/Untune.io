@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Untune.io</h1>
-  <p>Untune is a fullstack app built with React, Redux, Node, Reddit API, Youtube API, and Jest</p>
+  <p>Untune is a fullstack app built with React, Redux, Node, Saas, Reddit API, Youtube API, and Jest</p>
   <img src="public/images/web-screenshot.png" width="557" />
   <br />
 </div>
