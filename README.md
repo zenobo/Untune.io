@@ -12,10 +12,9 @@
 - [Getting Started](#getting-started)
 - [Tests](#tests)
 - [API](#API)
-- [License](#license)
 
 ## Overview
-This repo contains the web app for Untune.io. The other components are the [Untune Node API](https://github.com/zenobo/Untune-Backend) and the [Untune Chrome Extension](https://github.com/zenobo/Untune-Extension). The desktop version of the website generates playlists on the fly. On mobile, pre-cached playlists are fetched through the Node API. To learn more about data fetching on Untune, view the [API Section](#API).
+The components of Untune are the [Untune Node API](https://github.com/zenobo/Untune-Backend) and the [Untune Chrome Extension](https://github.com/zenobo/Untune-Extension). The desktop version of the website generates playlists on the fly. On mobile, pre-cached playlists are fetched through the Node API. To learn more about data fetching on Untune, view the [API Section](#API).
 
 ## Getting Started
 Use Node v12 to install and run the app 
@@ -40,3 +39,6 @@ Untune uses Jest and React-Testing-Library to test redux connected components. T
 ```
 npm run test
 ```
+
+## API
+Playlists are compiled differently across web and mobile. On web, playlists are generated on the fly through youtubes /watch_videos endpoint. This watch_videos endpoint isn't supported on the youtube mobile browser, so the [Untune Node API](https://github.com/zenobo/Untune-Backend) creates playlists daily on its youtube account for the top subreddits.
