@@ -14,18 +14,15 @@ class HeaderText extends React.Component {
     return (
       <div>
         <h1>
-          Start listening
+          Start listening to
           <br />
-          <span> on Youtube</span>
-        </h1>
-        <p>
-          Turn
           <a href="https://reddit.com/r/listentothis" target="_blank" rel="noopener noreferrer">
             r/
             {subreddit}
           </a>
-          into a Youtube playlist
-        </p>
+          <br />
+          <span> on Youtube</span>
+        </h1>
       </div>
     );
   }
