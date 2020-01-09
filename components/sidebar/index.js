@@ -51,9 +51,6 @@ class Sidebar extends React.Component {
 }
 
 Sidebar.propTypes = {
-  /**
-    Use the loading state to indicate that the data Avatar needs is still loading.
-  */
   subreddit: PropTypes.string.isRequired,
   sidebarEnabled: PropTypes.bool.isRequired,
 };
