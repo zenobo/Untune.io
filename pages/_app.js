@@ -1,3 +1,4 @@
+// eslint-disable jsx-props-no-spreading
 import React from 'react';
 import App from 'next/app';
 
@@ -5,8 +6,6 @@ import App from 'next/app';
 import withRedux from 'next-redux-wrapper';
 import { Provider } from 'react-redux';
 import initStore from 'redux/store';
-
-// eslint-disable jsx-props-no-spreading
 
 class RootApp extends App {
   static async getInitialProps({ Component, ctx }) {
