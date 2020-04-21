@@ -10,33 +10,24 @@ import Hamburger from './hamburger';
 
 import './style.scss';
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+const Header = ({subreddit}) => {
+  return (
+    <div className="header-container">
+      <Hamburger />
 
-  render() {
-    const { subreddit } = this.props;
-    return (
-      <div className="header-container">
-        <Hamburger />
-
-        <div className="header-inner">
-          <div className="header-banner">
-            <HeaderText subreddit={subreddit} />
-            <div className="playlist-preview">
-              <img src="./images/playlist-preview.png" alt="Untune.io playlist preview on youtube" />
-            </div>
+      <div className="header-inner">
+        <div className="header-banner">
+          <HeaderText subreddit={subreddit} />
+          <div className="playlist-preview">
+            <img src="./images/playlist-preview.png" alt="Untune.io playlist preview on youtube" />
           </div>
-
-          <HeaderPlaylstBtn />
-          <ChromeLink />
         </div>
+
+        <HeaderPlaylstBtn />
+        <ChromeLink />
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 const ChromeLink = () => (

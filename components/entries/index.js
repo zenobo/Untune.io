@@ -8,35 +8,27 @@ import Entry from './entry';
 
 import './style.scss';
 
-class Entries extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+const Entries = ({entries, loadingError}) => {
 
-  render() {
-    const { entries, loadingError } = this.props;
-    return (
-      <div>
-        {loadingError
-          ? <LoadingError />
-          : (
-            <div className="entries-container">
-              <h2>In todays playlist</h2>
+  return (
+    <div>
+      {loadingError
+        ? <LoadingError />
+        : (
+          <div className="entries-container">
+            <h2>In todays playlist</h2>
 
-              <div className="entries-table">
-                {entries.map((val) => (
-                  <Entry key={`entries-${val.title}`} entry={val} />
-                ))}
-              </div>
-
+            <div className="entries-table">
+              {entries.map((val) => (
+                <Entry key={`entries-${val.title}`} entry={val} />
+              ))}
             </div>
-          )}
-        <Credits />
-      </div>
-    );
-  }
+
+          </div>
+        )}
+      <Credits />
+    </div>
+  );
 }
 
 Entries.propTypes = {

@@ -13,44 +13,36 @@ import Body from 'components/body';
 // CSS
 import 'style/theme/main.scss';
 
-class Home extends React.Component {
-  static async getInitialProps({ query, store }) {
-    const { subreddit } = query;
-    await Promise.all([
-      store.dispatch(redditActions.SetSubreddit(subreddit)),
-    ]);
-    return { subreddit };
-  }
+const Home = ({FetchDesktop, FetchMobile, subreddit}) => {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
-
-  componentDidMount() {
-    const { FetchDesktop, FetchMobile, subreddit } = this.props;
+  React.useEffect(() => {
     if (window.innerWidth > 850) {
       FetchDesktop(subreddit);
     } else {
       FetchMobile(subreddit);
     }
-  }
+  }, [])
 
-  render() {
-    return (
-      <div className="app">
-        <MetaData />
+  return (
+    <div className="app">
+      <MetaData />
 
-        <div className="page">
-          <Sidebar />
-          <Body />
-        </div>
-
+      <div className="page">
+        <Sidebar />
+        <Body />
       </div>
 
-    );
-  }
+    </div>
+
+  );
+}
+
+Home.getInitialProps = async ({ query, store }) => {
+  const { subreddit } = query;
+  await Promise.all([
+    store.dispatch(redditActions.SetSubreddit(subreddit)),
+  ]);
+  return { subreddit };
 }
 
 Home.propTypes = {

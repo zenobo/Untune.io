@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 // Constants
-import { SUBREDDITS, SUBREDDITS_DESKTOP } from 'data/constants';
+import { SUBREDDITS } from 'data/constants';
 
 // Redux
 import * as uiActions from 'redux/ui/actions/index';
@@ -15,45 +15,29 @@ import Item from './item';
 // Style
 import './style.scss';
 
-class Sidebar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      reddits: SUBREDDITS,
-      desktopOnly: SUBREDDITS_DESKTOP,
-    };
-  }
+const Sidebar = ({subreddit, sidebarEnabled}) => {
 
-  render() {
-    const { reddits, desktopOnly } = this.state;
-    const { subreddit, sidebarEnabled } = this.props;
-    return (
-      <div className={`sidebar-container ${sidebarEnabled ? '' : 'sidebar-disabled'}`}>
+  const [reddits, setReddits] = React.useState(SUBREDDITS);
 
-        <img src="./images/logo.svg" className="logo" alt="Untune.io Logo" />
+  return (
+    <div className={`sidebar-container ${sidebarEnabled ? '' : 'sidebar-disabled'}`}>
 
-        <div className="sidebar-reddit-links">
-          <h4>Subreddits</h4>
+      <img src="./images/logo.svg" className="logo" alt="Untune.io Logo" />
 
-          {reddits.map((val) => (
-            <Item key={val.name} val={val} subreddit={subreddit} desktop={false} />
-          ))}
+      <div className="sidebar-reddit-links">
+        <h4>Subreddits</h4>
 
-          {desktopOnly.map((val) => (
-            <Item key={val.name} val={val} subreddit={subreddit} desktop />
-          ))}
-
-        </div>
+        {reddits.map((val) => (
+          <Item key={val.name} val={val} subreddit={subreddit} desktop={false} />
+        ))}
 
       </div>
-    );
-  }
+
+    </div>
+  );
 }
 
 Sidebar.propTypes = {
-  /**
-    Use the loading state to indicate that the data Avatar needs is still loading.
-  */
   subreddit: PropTypes.string.isRequired,
   sidebarEnabled: PropTypes.bool.isRequired,
 };

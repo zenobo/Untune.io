@@ -6,28 +6,20 @@ import { bindActionCreators } from 'redux';
 // Redux
 import * as uiActions from 'redux/ui/actions/index';
 
-class Hamburger extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+const Hamburger = ({ToggleSidebar}) => {
 
-  render() {
-    const { ToggleSidebar } = this.props;
-    return (
-      <button
-        className="header-hamburger"
-        onClick={ToggleSidebar}
-        type="submit"
-      >
-        <img
-          src="./images/hamburger.svg"
-          alt="Toggle the untune.io sidebar"
-        />
-      </button>
-    );
-  }
+  return (
+    <button
+      className="header-hamburger"
+      onClick={ToggleSidebar}
+      type="submit"
+    >
+      <img
+        src="./images/hamburger.svg"
+        alt="Toggle the untune.io sidebar"
+      />
+    </button>
+  );
 }
 
 Hamburger.propTypes = {

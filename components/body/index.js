@@ -3,30 +3,20 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Header from '../header';
-import Entries from '../entries';
 
 import './style.scss';
 
-class Body extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+const Body = ({sidebarEnabled}) => {
 
-  sidebarEnabled = () => {
-    const { sidebarEnabled } = this.props;
+  const isSidebarEnabled = () => {
     return sidebarEnabled ? '' : 'body-no-margin';
   }
 
-  render() {
-    return (
-      <div className={`body-container ${this.sidebarEnabled()}`}>
-        <Header />
-        <Entries />
-      </div>
-    );
-  }
+  return (
+    <div className={`body-container ${isSidebarEnabled()}`}>
+      <Header />
+    </div>
+  );
 }
 
 
